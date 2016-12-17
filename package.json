@@ -1,10 +1,13 @@
 {
   "name": "mof-parts-awesomeicon",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "AwesomeIcon of mofron parts",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "mofron-parts-text" : "^0.0.2"
   },
   "repository": {
     "type": "git",
