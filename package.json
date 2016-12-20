@@ -1,7 +1,7 @@
 {
-  "name": "mof-parts-awesomeicon",
-  "version": "0.0.2",
-  "description": "AwesomeIcon of mofron parts",
+  "name": "mofron-parts-awesomeicon",
+  "version": "0.0.3",
+  "description": "font awesome icon of mofron parts",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/simpart/mof-parts-awesomeicon.git"
+    "url": "git+https://github.com/simpart/mofron-parts-awesomeicon.git"
   },
   "keywords": [
     "mofron"
   ],
-  "author": "simpart",
+  "author": "simparts",
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
-    "url": "https://github.com/simpart/mof-parts-awesomeicon/issues"
+    "url": "https://github.com/simpart/mofron-parts-awesomeicon/issues"
   },
-  "homepage": "https://github.com/simpart/mof-parts-awesomeicon#readme"
+  "homepage": "https://github.com/simpart/mofron-parts-awesomeicon#readme"
 }
