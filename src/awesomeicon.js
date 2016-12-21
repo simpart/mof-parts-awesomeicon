@@ -1,7 +1,6 @@
 /**
  * @file BandText.js
  */
-require('mofron-parts-text');
 
 mofron.parts.AwesomeIcon = class extends mofron.parts.Text {
     initContents(vd, prm) {
