@@ -1,4 +1,4 @@
-require('mofron-parts-text');
+require('mofron-comp-text');
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -61,23 +61,59 @@ require('mofron-parts-text');
 	 * @file BandText.js
 	 */
 
-	mofron.parts.AwesomeIcon = function (_mofron$parts$Text) {
-	    _inherits(_class, _mofron$parts$Text);
+	mofron.comp.FontAwesome = function (_mofron$comp$Text) {
+	    _inherits(_class, _mofron$comp$Text);
 
-	    function _class() {
+	    function _class(prm, opt) {
 	        _classCallCheck(this, _class);
 
-	        return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));
+	        try {
+	            var _this = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, prm));
+
+	            _this.name('FontAwesome');
+
+	            _this.m_path = null;
+
+	            if (null !== opt) {
+	                _this.option(opt);
+	            }
+	        } catch (e) {
+	            console.error(e.stack);
+	            throw e;
+	        }
+	        return _this;
 	    }
 
 	    _createClass(_class, [{
-	        key: 'initContents',
-	        value: function initContents(vd, prm) {
+	        key: 'initDomConts',
+	        value: function initDomConts(prm) {
 	            try {
-	                _get(_class.prototype.__proto__ || Object.getPrototypeOf(_class.prototype), 'initContents', this).call(this, vd, '');
-	                var tgt = this.getTarget();
-	                tgt.chgTag('i');
-	                tgt.addClname('fa ' + prm);
+	                if ('string' !== typeof prm) {
+	                    throw new Error('invalid parameter');
+	                }
+	                _get(_class.prototype.__proto__ || Object.getPrototypeOf(_class.prototype), 'initDomConts', this).call(this, '');
+	                this.target().tag('i');
+	                this.target().addClname('fa ' + prm);
+	            } catch (e) {
+	                console.error(e.stack);
+	                throw e;
+	            }
+	        }
+	    }, {
+	        key: 'path',
+	        value: function path(pth) {
+	            try {
+	                if (undefined === pth) {
+	                    return this.m_path;
+	                }
+	                if ('string' !== typeof pth) {
+	                    throw new Error('invalid parameter');
+	                }
+	                this.m_path = pth;
+	                var link = new mofron.util.HeadConts('link');
+	                link.setAttr('rel', 'stylesheet');
+	                link.setAttr('href', pth);
+	                link.pushTag();
 	            } catch (e) {
 	                console.error(e.stack);
 	                throw e;
@@ -86,7 +122,7 @@ require('mofron-parts-text');
 	    }]);
 
 	    return _class;
-	}(mofron.parts.Text);
+	}(mofron.comp.Text);
 
 /***/ }
 /******/ ]);
