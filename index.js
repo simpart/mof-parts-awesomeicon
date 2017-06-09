@@ -4,16 +4,11 @@
 
 mofron.comp.FontAwesome = class extends mofron.comp.Text {
     
-    constructor (prm,opt) {
+    constructor (prm_opt) {
         try {
-            super(prm);
+            super();
             this.name('FontAwesome');
-            
-            this.m_path = null;
-            
-            if (null !== opt) {
-                this.option(opt);
-            }
+            this.prmOpt(prm_opt);
         } catch (e) {
             console.error(e.stack);
             throw e;
@@ -27,7 +22,7 @@ mofron.comp.FontAwesome = class extends mofron.comp.Text {
             }
             super.initDomConts('');
             this.target().tag('i');
-            this.target().addClname('fa ' + prm);
+            this.target().className('fa ' + prm)
         } catch (e) {
             console.error(e.stack);
             throw e;
@@ -37,19 +32,25 @@ mofron.comp.FontAwesome = class extends mofron.comp.Text {
     path (pth) {
         try {
             if (undefined === pth) {
-                return this.m_path;
+                /* getter */
+                return (undefined === this.m_path) ? null : this.m_path;
             }
+            /* setter */
             if ('string' !== (typeof pth)) {
                 throw new Error('invalid parameter');
             }
             this.m_path = pth;
-            var link = new mofron.util.HeadConts('link');
-            link.setAttr('rel'  , 'stylesheet');
-            link.setAttr('href' , pth);
-            link.pushTag();
+            mofron.func.addHeadConts({
+                tag  : 'link',
+                attr : {
+                           'rel'  : 'stylesheet',
+                           'href' : pth
+                       }
+            });
         } catch (e) {
             console.error(e.stack);
             throw e;
         }
     }
 }
+module.exports = mofron.comp.FontAwesome;
