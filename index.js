@@ -22,7 +22,7 @@ mofron.comp.FontAwesome = class extends mofron.comp.Text {
             }
             super.initDomConts('');
             this.target().tag('i');
-            this.target().className('fa ' + prm)
+            this.target().className('fa ' + 'fa-' + prm)
         } catch (e) {
             console.error(e.stack);
             throw e;
