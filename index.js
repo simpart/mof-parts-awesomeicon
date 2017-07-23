@@ -1,6 +1,7 @@
 /**
- * @file BandText.js
+ * @file fontawesome/index.js
  */
+require('mofron-comp-text');
 
 mofron.comp.FontAwesome = class extends mofron.comp.Text {
     
@@ -40,17 +41,19 @@ mofron.comp.FontAwesome = class extends mofron.comp.Text {
                 throw new Error('invalid parameter');
             }
             this.m_path = pth;
-            mofron.func.addHeadConts({
-                tag  : 'link',
-                attr : {
-                           'rel'  : 'stylesheet',
-                           'href' : pth
-                       }
-            });
+            if (false === mofron.comp.FontAwesome_link) {
+                mofron.func.addHeadConts({
+                    tag  : 'link',
+                    attr : { 'rel'  : 'stylesheet',
+                             'href' : pth }
+                });
+            }
+            mofron.comp.FontAwesome_link = true;
         } catch (e) {
             console.error(e.stack);
             throw e;
         }
     }
 }
+mofron.comp.FontAwesome_link = false;
 module.exports = mofron.comp.FontAwesome;
