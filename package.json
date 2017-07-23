@@ -1,6 +1,6 @@
 {
   "name": "mofron-comp-fontawesome",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "font awesome icon of mofron parts",
   "main": "indexjs",
   "scripts": {
