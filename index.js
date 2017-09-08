@@ -5,11 +5,10 @@ require('mofron-comp-text');
 
 mofron.comp.FontAwesome = class extends mofron.comp.Text {
     
-    constructor (prm_opt) {
+    constructor (po) {
         try {
-            super();
+            super(po);
             this.name('FontAwesome');
-            this.prmOpt(prm_opt);
         } catch (e) {
             console.error(e.stack);
             throw e;
@@ -18,12 +17,29 @@ mofron.comp.FontAwesome = class extends mofron.comp.Text {
     
     initDomConts(prm) {
         try {
-            if ('string' !== (typeof prm)) {
-                throw new Error('invalid parameter');
-            }
             super.initDomConts('');
             this.target().tag('i');
-            this.target().className('fa ' + 'fa-' + prm)
+            if (null !== prm) {
+                this.icon(prm);
+            }
+        } catch (e) {
+            console.error(e.stack);
+            throw e;
+        }
+    }
+    
+    icon (nm) {
+        try {
+           if (undefined === nm) {
+               /* getter */
+               return (undefined === this.m_icon_nm) ? null : this.m_icon_nm;
+           }
+           /* setter */
+           if ('string' !== typeof nm) {
+               throw new Error('invalid parameter');
+           }
+           this.target().className('fa ' + 'fa-' + nm);
+           this.m_icon_nm = nm;
         } catch (e) {
             console.error(e.stack);
             throw e;
