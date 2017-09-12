@@ -7,8 +7,9 @@ mofron.comp.FontAwesome = class extends mofron.comp.Text {
     
     constructor (po) {
         try {
-            super(po);
+            super();
             this.name('FontAwesome');
+            this.prmOpt(po);
         } catch (e) {
             console.error(e.stack);
             throw e;
