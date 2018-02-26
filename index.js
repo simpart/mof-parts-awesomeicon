@@ -29,6 +29,23 @@ mofron.comp.FontAwesome = class extends mofron.comp.Text {
         }
     }
     
+    basePrefix (val) {
+        try {
+            if (undefined === val) {
+                /* getter */
+                return (undefined === this.m_basepfx) ? 'fa' : this.m_basepfx;
+            }
+            /* setter */
+            if ('string' !== typeof val) {
+                throw new Error('invalid parameter');
+            }
+            this.m_basepfx = val;
+        } catch (e) {
+            console.error(e.stack);
+            throw e;
+        }
+    }
+    
     icon (nm) {
         try {
            if (undefined === nm) {
@@ -39,7 +56,7 @@ mofron.comp.FontAwesome = class extends mofron.comp.Text {
            if ('string' !== typeof nm) {
                throw new Error('invalid parameter');
            }
-           this.target().className('fa ' + 'fa-' + nm);
+           this.target().className(this.basePrefix() + ' fa-' + nm);
            this.m_icon_nm = nm;
         } catch (e) {
             console.error(e.stack);
