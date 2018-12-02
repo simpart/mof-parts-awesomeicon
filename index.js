@@ -1,14 +1,17 @@
 /**
  * @file fontawesome/index.js
+ * @brief fontawesome icon component
  */
-require('mofron-comp-text');
+const mf = require('mofron');
+const Text = require('mofron-comp-text');
 
-mofron.comp.FontAwesome = class extends mofron.comp.Text {
+mf.comp.FontAwesome = class extends Text {
     
     constructor (po) {
         try {
             super();
             this.name('FontAwesome');
+            this.prmMap('icon', 'path');
             this.prmOpt(po);
         } catch (e) {
             console.error(e.stack);
@@ -16,48 +19,29 @@ mofron.comp.FontAwesome = class extends mofron.comp.Text {
         }
     }
     
-    initDomConts(prm) {
-        try {
-            super.initDomConts('');
-            this.target().tag('i');
-            if (null !== prm) {
-                this.icon(prm);
-            }
-        } catch (e) {
+    initDomConts() {
+        try { super.initDomConts('i'); } catch (e) {
             console.error(e.stack);
             throw e;
         }
     }
     
-    basePrefix (val) {
-        try {
-            if (undefined === val) {
-                /* getter */
-                return (undefined === this.m_basepfx) ? 'fa' : this.m_basepfx;
-            }
-            /* setter */
-            if ('string' !== typeof val) {
-                throw new Error('invalid parameter');
-            }
-            this.m_basepfx = val;
-        } catch (e) {
+    basePrefix (prm) {
+        try { return this.member('basePrefix', 'string', prm, 'fas'); } catch (e) {
             console.error(e.stack);
             throw e;
         }
     }
     
-    icon (nm) {
+    icon (prm) {
         try {
-           if (undefined === nm) {
+           let ret = this.member('icon', 'string', prm);
+           if (undefined === prm) {
                /* getter */
-               return (undefined === this.m_icon_nm) ? null : this.m_icon_nm;
+               return (null !== ret) ? this.basePrefix() + ' fa-' + ret : null;
            }
            /* setter */
-           if ('string' !== typeof nm) {
-               throw new Error('invalid parameter');
-           }
-           this.target().className(this.basePrefix() + ' fa-' + nm);
-           this.m_icon_nm = nm;
+           this.target().className(this.basePrefix() + ' fa-' + prm);
         } catch (e) {
             console.error(e.stack);
             throw e;
@@ -89,5 +73,5 @@ mofron.comp.FontAwesome = class extends mofron.comp.Text {
         }
     }
 }
-mofron.comp.FontAwesome_link = false;
-module.exports = mofron.comp.FontAwesome;
+mf.comp.FontAwesome_link = false;
+module.exports = mf.comp.FontAwesome;
