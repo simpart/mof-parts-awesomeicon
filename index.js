@@ -35,13 +35,16 @@ mf.comp.FontAwesome = class extends Text {
     
     icon (prm) {
         try {
-           let ret = this.member('icon', 'string', prm);
            if (undefined === prm) {
                /* getter */
-               return (null !== ret) ? this.basePrefix() + ' fa-' + ret : null;
+               return this.member('icon', 'string');
            }
            /* setter */
-           this.target().className(this.basePrefix() + ' fa-' + prm);
+           this.target().className(
+               this.basePrefix() + ' fa-' + prm,
+               (null !== this.icon()) ? true : false
+           );
+           this.member('icon', 'string', prm);
         } catch (e) {
             console.error(e.stack);
             throw e;
