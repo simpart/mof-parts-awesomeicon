@@ -26,8 +26,8 @@ mf.comp.FontAwesome = class extends Text {
         }
     }
     
-    basePrefix (prm) {
-        try { return this.member('basePrefix', 'string', prm, 'fas'); } catch (e) {
+    text (prm) {
+        try { return this.icon(prm); } catch (e) {
             console.error(e.stack);
             throw e;
         }
@@ -40,10 +40,7 @@ mf.comp.FontAwesome = class extends Text {
                return this.member('icon', 'string');
            }
            /* setter */
-           this.target().className(
-               this.basePrefix() + ' fa-' + prm,
-               (null !== this.icon()) ? true : false
-           );
+           this.target().className(prm, (null !== this.icon()) ? true : false);
            this.member('icon', 'string', prm);
         } catch (e) {
             console.error(e.stack);
@@ -51,30 +48,21 @@ mf.comp.FontAwesome = class extends Text {
         }
     }
     
-    path (pth) {
+    path (prm) {
         try {
-            if (undefined === pth) {
-                /* getter */
-                return (undefined === this.m_path) ? null : this.m_path;
-            }
-            /* setter */
-            if ('string' !== (typeof pth)) {
-                throw new Error('invalid parameter');
-            }
-            this.m_path = pth;
-            if (false === mofron.comp.FontAwesome_link) {
+            let ret = this.member('path', 'string', prm);
+            if (undefined !== prm) {
                 mofron.func.addHeadConts({
                     tag  : 'link',
                     attr : { 'rel'  : 'stylesheet',
                              'href' : pth }
                 });
             }
-            mofron.comp.FontAwesome_link = true;
+            return this.member('path', 'string', prm);
         } catch (e) {
             console.error(e.stack);
             throw e;
         }
     }
 }
-mf.comp.FontAwesome_link = false;
 module.exports = mf.comp.FontAwesome;
