@@ -1,5 +1,5 @@
 <require>
-    <tag module="mofron-comp-fontawesome">Icon</tag>
+    <tag module="mofron-comp-aweicon">Icon</tag>
 </require>
 
 <Icon>fas fa-angle-right</Icon>

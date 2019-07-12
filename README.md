@@ -14,7 +14,7 @@ npm install mofron mofron-comp-aweicon
 # Sample
 ```html
 <require>
-    <tag module="mofron-comp-fontawesome">Icon</tag>
+    <tag module="mofron-comp-aweicon">Icon</tag>
 </require>
 
 <Icon>fas fa-angle-right</Icon>
@@ -23,7 +23,7 @@ npm install mofron mofron-comp-aweicon
 
 |Simple<br>Param | Parameter Name | Type | Description |
 |:--------------:|:---------------|:-----|:------------|
-|◯ | text | string | icon simbol, class value [same as 'icon' parameter] |
+| | text | string | icon simbol, class value [same as 'icon' parameter] |
 | | icon | string | icon simbol, class value |
 | | path | string | css path for font-awesome |
 
