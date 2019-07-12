@@ -44,7 +44,7 @@ mf.comp.AweIcon = class extends Text {
     /**
      * same as icon
      *
-     * @param (string) icon simbol, class value
+     * @param (string) icon simbol, class value [same as 'icon' parameter]
      * @return (string) icon simbol, class value
      * @type parameter
      */
