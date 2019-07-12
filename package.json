@@ -1,14 +1,14 @@
 {
-  "name": "mofron-comp-fontawesome",
-  "version": "0.1.5",
-  "description": "font awesome icon of mofron parts",
+  "name": "mofron-comp-aweicon",
+  "version": "0.1.6",
+  "description": "font awesome icon for mofron",
   "main": "indexjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/simpart/mofron-parts-awesomeicon.git"
+    "url": "git+https://github.com/simpart/mofron-comp-aweicon.git"
   },
   "dependencies": {
     "mofron-comp-text" : ""
@@ -19,7 +19,7 @@
   "author": "simparts",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/simpart/mofron-parts-awesomeicon/issues"
+    "url": "https://github.com/simpart/mofron-comp-aweicon/issues"
   },
-  "homepage": "https://github.com/simpart/mofron-parts-awesomeicon#readme"
+  "homepage": "https://github.com/simpart/mofron-comp-aweicon#readme"
 }

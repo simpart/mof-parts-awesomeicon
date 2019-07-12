@@ -1,2 +1,29 @@
-# mof-parts-awesomeicon
-AweSome Icon of mofron UI parts
+# mofron-comp-aweicon
+[mofron](https://mofron.github.io/mofron/) is module based frontend framework.
+
+fontawesome icon component
+
+## Attention
+ - it needs link tag that has a path to font-awesome
+
+# Install
+```
+npm install mofron mofron-comp-aweicon
+```
+
+# Sample
+```html
+<require>
+    <tag module="mofron-comp-fontawesome">Icon</tag>
+</require>
+
+<Icon>fas fa-angle-right</Icon>
+```
+# Parameter
+
+|Simple<br>Param | Parameter Name | Type | Description |
+|:--------------:|:---------------|:-----|:------------|
+|◯ | text | string | icon simbol, class value |
+| | icon | string | icon simbol, class value |
+| | path | string | css path for font-awesome |
+
