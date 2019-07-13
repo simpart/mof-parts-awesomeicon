@@ -23,7 +23,7 @@ npm install mofron mofron-comp-aweicon
 
 |Simple<br>Param | Parameter Name | Type | Description |
 |:--------------:|:---------------|:-----|:------------|
-| | text | string | icon simbol, class value [same as 'icon' parameter] |
+| ◯ | text | string | icon simbol, class value [same as 'icon' parameter] |
 | | icon | string | icon simbol, class value |
 | | path | string | css path for font-awesome |
 
