@@ -1,7 +1,7 @@
 # mofron-comp-aweicon
 [mofron](https://mofron.github.io/mofron/) is module based frontend framework.
 
-fontawesome icon component
+[fontawesome](https://fontawesome.com/) icon component
 
 ## Attention
  - it needs link tag that has a path to font-awesome

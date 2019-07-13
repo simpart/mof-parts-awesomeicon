@@ -1,6 +1,6 @@
 /**
  * @file mofron-comp-aweicon/index.js
- * @brief fontawesome icon component
+ * @brief [fontawesome](https://fontawesome.com/) icon component
  * @attention it needs link tag that has a path to font-awesome
  * @author simpart
  */
