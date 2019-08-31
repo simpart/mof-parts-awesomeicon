@@ -1,6 +1,6 @@
 {
   "name": "mofron-comp-aweicon",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "font awesome icon for mofron",
   "main": "indexjs",
   "scripts": {
@@ -11,7 +11,8 @@
     "url": "git+https://github.com/simpart/mofron-comp-aweicon.git"
   },
   "dependencies": {
-    "mofron-comp-text" : ""
+    "mofron-comp-text" : "",
+    "mofron-event-link" : ""
   },
   "keywords": [
     "front-end"
