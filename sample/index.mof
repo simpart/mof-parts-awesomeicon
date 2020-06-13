@@ -1,5 +1,5 @@
-<require>
-    <tag module="mofron-comp-aweicon">Icon</tag>
-</require>
+<setting>
+    <tag load="mofron-comp-aweicon">Icon</tag>
+</setting>
 
 <Icon>fas fa-angle-right</Icon>

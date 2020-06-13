@@ -1,10 +1,8 @@
 # mofron-comp-aweicon
 [mofron](https://mofron.github.io/mofron/) is module based frontend framework.
 
-[fontawesome](https://fontawesome.com/) icon component
+component for fontawesome icon
 
-## Attention
- - it needs link tag that has a path to font-awesome
 
 # Install
 ```
@@ -13,17 +11,20 @@ npm install mofron mofron-comp-aweicon
 
 # Sample
 ```html
-<require>
-    <tag module="mofron-comp-aweicon">Icon</tag>
-</require>
+<setting>
+    <tag load="mofron-comp-aweicon">Icon</tag>
+</setting>
 
 <Icon>fas fa-angle-right</Icon>
 ```
+
 # Parameter
 
-|Simple<br>Param | Parameter Name | Type | Description |
-|:--------------:|:---------------|:-----|:------------|
-| ◯ | text | string | icon simbol, class value [same as 'icon' parameter] |
-| | icon | string | icon simbol, class value |
-| | path | string | css path for font-awesome |
+| Short<br>Form | Parameter Name | Type | Description |
+|:-------------:|:---------------|:-----|:------------|
+| | text | string | icon config |
+| ◯  | icon | string | icon config |
+| | link | string | link path  |
+| | | boolean | true: open link with new tab |
+| | | | false: jump to link |
 
