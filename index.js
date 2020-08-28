@@ -18,7 +18,7 @@ module.exports = class extends Text {
     constructor (p1) {
         try {
             super();
-            this.name('AweIcon');
+            this.modname('AweIcon');
             this.shortForm('icon');
             
             this.confmng().add("icon", { type: "string" });
